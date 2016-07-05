@@ -37,4 +37,8 @@ collatz m = coll 1 m
   where coll r 1 = (m, r)
         coll r n = if even n then coll (r+1) (n `quot` 2) else coll (r+1) (3*n+1)
 
+perfectNum n = n == (sum $ pfactors n)
 
+abundantNum n = n < (sum $ pfactors n)
+
+deficientNum n = n > (sum $ pfactors n)
